@@ -3,11 +3,12 @@
 import psutil
 import time
 
+pids = psutil.pids()
 
-pid = 638080
+pid = pids[len(pids)-1]
 processo = psutil.Process(pid)
 
-print(f"Processo: {processo.name()}"
-      f" | Proprietário: {processo.username()}"
-      f" | Tempo de criação: {time.ctime(processo.create_time())}"
-      f" | Uso de memória: {processo.memory_info()}")
+print(f"Processo: {processo.name()}")
+print(f"Proprietário: {processo.username()}")
+print(f"Tempo de criação: {time.ctime(processo.create_time())}")
+print(f"Uso de memória (RSS): {processo.memory_info().rss} KB")
