@@ -1,7 +1,6 @@
 # Escreva um programa em Python, usando o módulo ‘psutil’, que imprima em GB, quanto de memória principal e quanto de
 # memória de paginação (swap) existem no computador.
 import psutil
-import time
 
 memoria_principal = psutil.virtual_memory().total
 memoria_paginacao = psutil.swap_memory().total
